@@ -33,9 +33,11 @@ class GameFragment : Fragment() {
 
     private var score = 0
     private var currentWordCount = 0
+    private var _count = 0
+    val count: Int
+        get() = _count
     private var currentScrambledWord = "test"
     private var _currentScrambledWord = "test"
-    val count: String
     get() = _currentScrambledWord
     private val viewModel: GameViewModel by viewModels()
 
