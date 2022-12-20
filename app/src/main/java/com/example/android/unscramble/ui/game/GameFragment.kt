@@ -36,9 +36,9 @@ class GameFragment : Fragment() {
     private var _count = 0
     val count: Int
         get() = _count
-    private var currentScrambledWord = "test"
     private var _currentScrambledWord = "test"
-    get() = _currentScrambledWord
+        val currentScrambledWord: String
+            get() = _currentScrambledWord
     private val viewModel: GameViewModel by viewModels()
 
 
@@ -96,7 +96,7 @@ class GameFragment : Fragment() {
      * Increases the word count.
      */
     private fun onSkipWord() {
-        currentScrambledWord = getNextScrambledWord()
+        _currentScrambledWord = getNextScrambledWord()
         currentWordCount++
         binding.wordCount.text = getString(R.string.word_count, currentWordCount, MAX_NO_OF_WORDS)
         setErrorTextField(false)
